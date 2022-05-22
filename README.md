@@ -1,7 +1,7 @@
 # Web SDK Setup Guide
 - Basic setup
 	- [Intro](#intro-basic)
-	- [Initialization](#initialization) - leave as is
+	- [Initialization](#initialization) 
 	- [Tracking page visits](#track-visits)
 	- [Tracking emails for Visitors](#tracking-emails-for-visitors)
 	- [Tracking new registrastions](#tracking-new-registrastions)
@@ -15,6 +15,7 @@ Use the basic setup of the Web SDK in order to:
 -   Implement  [Track & Trigger](https://docs.optimove.com/track-and-trigger/)
 -   Implement  [Google Display Network](https://github.com/optimove-tech/GDN/blob/newImplementation/README.md)  execution channel
 
+### <a id="initialization"></a> Initialization
 ### [](https://github.com/optimove-tech/Web-SDK-Integration-Guide-V2#--add-the-optimove-web-sdk-script-to-your-website)Add the Optimove Web SDK script to your website
 
 The following code snippet must be added to every page in your website, either by adding it into the relevant site template files/code or using a website tag manager (such as  [Google Tag Manager code snippet](https://github.com/optimove-tech/Web-SDK-Integration-Guide/blob/newImplemetationUpdate/Web-SDK-Basic-Code-Setup/readme.md)) This code will load and initialize the SDK.
