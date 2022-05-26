@@ -9,9 +9,7 @@ var optimoveTenantId = 'your-tenant-id';
 // ---------------------------------------
 
 // Function: createOptimoveSDK
-
 // Args: resourceURL, callback
-
 // creates JS script that is async
 
 // ---------------------------------------
@@ -21,35 +19,20 @@ function createOptimoveSDK(resourceURL, callback) {
 console.log('In createOptimoveSDK() '+resourceURL);
 
 if (resourceURL != null) {
-
 var d = document;
-
 var g = d.createElement('script');
-
 var s = d.getElementsByTagName('script')[0];
-
 g.type = 'text/javascript';
-
 g.async = true;
-
 g.defer = true;
-
 g.src = resourceURL;
-
 g.onload = callback;
-
 s.parentNode.insertBefore(g, s);
-
+  }
 }
-
-}
-
 // ---------------------------------------
 
 // Function: initializeOptimoveSDK
-
-// Args: --
-
 // initializes optimove SDK with sdk details provided to you by Product Integration team
 
 // ---------------------------------------
@@ -62,34 +45,23 @@ function initializeOptimoveSDK() {
 // ---------------------------------------
 
 // Function: loadOptimoveSDKFunctions
-
 // Args: status
-
 // where you call optimove sdk functions, such as setPageVisit()
 
 // ---------------------------------------
 
 function loadOptimoveSDKFunctions(status) {
-
-console.log('In loadOptimoveSDKFunctions() = ' + status);
-
-var public_customer_ID = '{{clientId}}';
-
-console.log('client= '+public_customer_ID);
-
-//Call setUserId() function ONLY when the registered user/customer is recognizable
-
-//MUST be entered in string format
-
-if (public_customer_ID != 'undefined') {
-
-optimoveSDK.API.setUserId(public_customer_ID);
-
-}
-
+  console.log('In loadOptimoveSDKFunctions() = ' + status);
+  var public_customer_ID = '{{clientId}}';
+  console.log('client= '+public_customer_ID);
+  //Call setUserId() function ONLY when the registered user/customer is recognizable
+  //MUST be entered in string format
+  if (public_customer_ID != 'undefined') {
+     optimoveSDK.API.setUserId(public_customer_ID);
+     }
 //Note: if you do not have a category, please add the title instead.
 
-optimoveSDK.API.setPageVisit('{{page url}}', '{{page title}}', '{{page category/title}}',public_customer_ID);
+   optimoveSDK.API.setPageVisit('{{page url}}', '{{page title}}', '{{page category/title}}',public_customer_ID);
 
 }
 
@@ -99,16 +71,19 @@ optimoveSDK.API.setPageVisit('{{page url}}', '{{page title}}', '{{page category/
 // ---------------------------------------
 //This will be your dynamic values which will be used for the Optimove sdk
 //your_tenant_id = your tenant id provided by the Product Integration team
-// please note that for retrieval of the stg configuration file ('your-config-version'-stg) you should append '&&env=stg' to the src tag 
 // please note that the "get_sdk_id" tag is warapping a set user id event, only as an example
 // ---------------------------------------
 
 <script src="https://sdk.optimove.net/websdk/?tenant_id={your_tenant_id}"></script>
-<script type="text/javascript">
-  dataLayer.push({
-  	'event':"get_sdk_id"    
-  })
-  dataLayer.push({
+<script type= "text/javascript">
+    dataLayer.push({
+     'event':"signup"
+});
+   dataLayer.push({
     'event':"page_visit"
-  }); 
+});
+     dataLayer.push({
+    'event':"login"
+});
 </script>
+
