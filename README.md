@@ -182,6 +182,7 @@ optimoveSDK.API.reportEvent('registration',parameters,callback,SDK_ID)
 
 
 ## <a id="tracking-login-for-existing-users"></a>Tracking login for exsting users
+In all cases, you detect a user login call **login event**
 
 **Example usage 1:**  login without callback function:
 ```javascript
