@@ -25,7 +25,7 @@ The following code snippet must be added to every page in your website, either b
 > **Note:**  Remember to replace  **your_tenant_id**  ,with the actual details that you receive from Optimove’s Integration Team.
 ## <a id="track-visits"></a>Tracking Page Visits 
 
-In order to track page visits, call the setPageVisit() function on every page of the website to ensure that accurate user counts and session time metrics are collected.
+In order to track page visits, call the setPageVisit() function on every page of the website to ensure that accurate user counts and session time metrics are collected.For customers, call the setPageVisit() function with the SDK ID
 
 ```javascript
 // PageURL: The page URL (string, required)
@@ -33,7 +33,6 @@ In order to track page visits, call the setPageVisit() function on every page of
 // PageCategory: The page category (string, optional)
 optimoveSDK.API.setPageVisit(PageURL, PageTitle, PageCategory);
 ```
-In order to track page visits for customers, call the setPageVisit() function with the SDK ID to ensure that accurate user counts and session time metrics are collected.
 
 **Example usage for Visitor:**
 
@@ -128,7 +127,7 @@ updateSDKUserEmail (email,callback);
 
 ## <a id="tracking-new-registrastions"></a>  Tracking New Registrations
 
-In all situations where a single user action requires you to set both the customer ID and email address (e.g., registration, newsletter signup) simultaneously, you should use the **registerUser()**  function.
+In all situations where a single user action requires you to set both the customer ID and email address (e.g., registration, newsletter signup) simultaneously, you should use the **registration event**.
 
 **Example usage 1:**  SDK_ID and email address without events:
 
@@ -146,7 +145,7 @@ var parameters = {
 
 
 // passing the variables to the SDK function
-optimoveSDK.API.reportEvent('signup',parameters,null,SDK_ID)
+optimoveSDK.API.reportEvent('registration',parameters,null,SDK_ID)
 ```
 
 **Example usage 2:**  SDK_ID and email address with a custom event:
@@ -167,7 +166,7 @@ var callback = function() {
 	};
 
 // passing the variables to the SDK function
-optimoveSDK.API.reportEvent('signup',parameters,callback,SDK_ID)
+optimoveSDK.API.reportEvent('registration',parameters,callback,SDK_ID)
 ```
 
 **Notes:**
@@ -178,12 +177,26 @@ optimoveSDK.API.reportEvent('signup',parameters,callback,SDK_ID)
 >-   The parameter types available for use in event-reporting functions are: >  **String**  – A series of alphanumeric characters of up to 255 characters in length, using any encoding >**Number**  – Any numeric value, whether an integer or a value containing a decimal point >**Boolean**  – Is either "true" or "false" values, not a string
 >-   All monetary values must be reported in the same currency defined in your Optimove instance (e.g., if your instance is based on US dollars, all monetary event values must be reported in dollars). Optimove will not perform currency conversions.
 >-   If your Optimove instance supports multiple languages, all event parameters must use a single default language. This is required in order to maintain a unified set of events.
+>- The callback function must be sent as null when it is not in use
 >-   **In order to ensure the correct order of arrival, utilize the Optimove SDK callback functions.**
 
 
 ## <a id="tracking-login-for-existing-users"></a>Tracking login for exsting users
 
+**Example usage 1:**  login without callback function:
+```javascript
+// example variables
+var SDK_ID = 'JohnDoe';
 
+var parameters = {
+      brand: 'example',    
+}
+
+// passing the variables to the SDK function
+optimoveSDK.API.reportEvent('login',parameters,null,SDK_ID)
+```
+
+**Example usage 2:**  login with callback function:
 ```javascript
 // example variables
 var SDK_ID = 'JohnDoe';
