@@ -169,17 +169,6 @@ var callback = function() {
 optimoveSDK.API.reportEvent('registration',parameters,callback,SDK_ID)
 ```
 
-**Notes:**
-
->-   Event names and parameters must first be configured within the Optimove instance using the  [Events Configuration Screen](https://academy.optimove.com/en/article/configuring-events-in-optimove)
->-   Event and parameter names are case sensitive.
->-   Events and parameters use lowercase and snake_case as a naming convention. Separate each word with one underscore character (_) and no spaces. (e.g., checkout_completed)
->-   The parameter types available for use in event-reporting functions are: >  **String**  – A series of alphanumeric characters of up to 255 characters in length, using any encoding >**Number**  – Any numeric value, whether an integer or a value containing a decimal point >**Boolean**  – Is either "true" or "false" values, not a string
->-   All monetary values must be reported in the same currency defined in your Optimove instance (e.g., if your instance is based on US dollars, all monetary event values must be reported in dollars). Optimove will not perform currency conversions.
->-   If your Optimove instance supports multiple languages, all event parameters must use a single default language. This is required in order to maintain a unified set of events.
->- The callback function must be sent as null when it is not in use
->-   **In order to ensure the correct order of arrival, utilize the Optimove SDK callback functions.**
-
 
 ## <a id="tracking-login-for-existing-users"></a>Tracking login for exsting users
 In all cases, you detect a user login call **login event**
@@ -213,6 +202,16 @@ var callback = function() {
 // passing the variables to the SDK function
 optimoveSDK.API.reportEvent('login',parameters,callback,SDK_ID)
 ```
+**Notes:**
+
+>-   Event names and parameters must first be configured within the Optimove instance using the  [Events Configuration Screen](https://academy.optimove.com/en/article/configuring-events-in-optimove)
+>-   Event and parameter names are case sensitive.
+>-   Events and parameters use lowercase and snake_case as a naming convention. Separate each word with one underscore character (_) and no spaces. (e.g., checkout_completed)
+>-   The parameter types available for use in event-reporting functions are: >  **String**  – A series of alphanumeric characters of up to 255 characters in length, using any encoding >**Number**  – Any numeric value, whether an integer or a value containing a decimal point >**Boolean**  – Is either "true" or "false" values, not a string
+>-   All monetary values must be reported in the same currency defined in your Optimove instance (e.g., if your instance is based on US dollars, all monetary event values must be reported in dollars). Optimove will not perform currency conversions.
+>-   If your Optimove instance supports multiple languages, all event parameters must use a single default language. This is required in order to maintain a unified set of events.
+>- The callback function must be sent as null when it is not in use
+>-   **In order to ensure the correct order of arrival, utilize the Optimove SDK callback functions.**
 
 #  <a id=advanced-setup></a>Advanced Setup
 ### <a id="intro-advanced"></a> intro  
