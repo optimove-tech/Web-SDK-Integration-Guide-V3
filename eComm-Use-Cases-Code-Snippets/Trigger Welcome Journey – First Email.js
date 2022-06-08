@@ -20,5 +20,5 @@ var parameters = {
 };
 
 //registerUser() function sends both the SDK_ID and one custom event to Optimove
-optimoveSDK.API.reportEvent('signup',parameters,null,SDK_ID);
+optimoveSDK.API.reportEvent('registration',parameters,null,SDK_ID);
 
