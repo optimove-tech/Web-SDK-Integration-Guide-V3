@@ -8,6 +8,7 @@
 	- [Tracking login for exsting users ](#tracking-login-for-existing-users)
 - Advanced setup
 	- [Intro](#intro-advanced)
+	- [Reporting Custom Events](#reporting-custom-events)
 
 ### <a id="intro-basic"></a> Intro 
 Use the basic setup of the Web SDK in order to:
@@ -221,7 +222,7 @@ Following your Basic Setup SDK deployment, Optimove's Product Integration Manage
 
 > **Note:**  The Basic Setup is a pre-requisite to the Advanced one.
 
-### [](https://github.com/optimove-tech/Web-SDK-Integration-Guide-V2#reporting-custom-events)Reporting Custom Events
+### <a id="reporting-custom-events"></a> Reporting Custom Events
 
 Your website reports a predefined event to Optimove by using JavaScript to call  **reportEvent()**  in this format:
 ```javascript
