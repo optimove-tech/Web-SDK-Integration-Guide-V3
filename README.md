@@ -228,8 +228,12 @@ Your website reports a predefined event to Optimove by using JavaScript to call 
 ```javascript
 optimoveSDK.API.reportEvent(<event_name>, <parameter JS object>);
 ```
+In case a user is identified you can add the SDK_ID to the reportEvent() function in this format:
+```javascript
+optimoveSDK.API.reportEvent(<event_name>, <parameter JS object>,SDK_ID);
+```
 
-**Example usage 1:**  reportEvent() without callback function
+**Example usage 1:**  reportEvent() without callback function for unidentified users 
 ```javascript
 // an function for adding a product to a specific wish list
 function addToWishList(list_name, pid, pname, price) {
@@ -238,13 +242,49 @@ function addToWishList(list_name, pid, pname, price) {
 	   params['pid'] = pid;
 	   params['name'] = pname;
 	   params['price'] = price;
-   optimoveSDK.API.reportEvent ('add_to_wishlist',params,SDK_ID);
+   optimoveSDK.API.reportEvent ('add_to_wishlist',params);
 }
 
 // calling the add to wish list function with the relavant data
 addToWishList('my wish list 1', 123456, 'product name', 1.99);
 ```
-**Example usage 2:**  reportEvent() with callback function
+**Example usage 2:**  reportEvent() without callback function for identified users 
+```javascript
+// an function for adding a product to a specific wish list
+function addToWishList(list_name, pid, pname, price) {
+   var params = {};
+	   params['list_name'] = list_name;
+	   params['pid'] = pid;
+	   params['name'] = pname;
+	   params['price'] = price;
+   optimoveSDK.API.reportEvent ('add_to_wishlist',params,null,SDK_ID);
+}
+
+// calling the add to wish list function with the relavant data
+addToWishList('my wish list 1', 123456, 'product name', 1.99);
+```
+**Example usage 3:**  reportEvent() with callback function for unidentified users 
+```javascript
+// a function for adding a product to a specific wish list 
+//and updating the current size of the wish list 
+function addToWishList(list_name, pid, pname, price) { 
+	var params = {}; 
+		params['list_name'] = list_name; 
+		params['pid'] = pid; 
+		params['name'] = pname; 
+		params['price'] = price; 
+		
+	var callback = function() { 
+	optimoveSDK.API.reportEvent('wishlist_size_change', {wishlist_size: 5}); 
+	}; 
+
+optimoveSDK.API.reportEvent ('add_to_wishlist', params, callback); 
+} 
+
+// calling the add to wish list function with the relavant data 
+addToWishList('my wish list 1', 123456, 'product name', 1.99);
+```
+**Example usage 4:**  reportEvent() with callback function for identified users 
 ```javascript
 // a function for adding a product to a specific wish list 
 //and updating the current size of the wish list 
