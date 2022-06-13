@@ -130,7 +130,7 @@ updateSDKUserEmail (email,callback);
 
 In all situations where a single user action requires you to set both the customer ID and email address (e.g., registration, newsletter signup) simultaneously, you should use the **registration event**.
 
-**Example usage 1:**  SDK_ID and email address without events:
+**Example usage 1:**  Registration without callback function:
 
 ```javascript
 
@@ -149,7 +149,7 @@ var parameters = {
 optimoveSDK.API.reportEvent('registration',parameters,null,SDK_ID)
 ```
 
-**Example usage 2:**  SDK_ID and email address with a custom event:
+**Example usage 2:**  Registration with callback function to report additional custom event/s:
 ```javascript 
 
 // example variables
