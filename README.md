@@ -26,7 +26,7 @@ The following code snippet must be added to every page in your website, either b
 > **Note:**  Remember to replace  **your_tenant_id**  ,with the actual details that you receive from Optimove’s Integration Team.
 ## <a id="track-visits"></a>Tracking Page Visits 
 
-In order to track page visits, call the setPageVisit() function on every page of the website to ensure that accurate user counts and session time metrics are collected.For customers, call the setPageVisit() function with the SDK ID
+In order to track page visits, call the setPageVisit() function on every page of the website to ensure that accurate user counts and session time metrics are collected.For customers, If a user is identified you can add the SDK_ID to the setPageVisit() function, see example below’
 
 ```javascript
 // PageURL: The page URL (string, required)
