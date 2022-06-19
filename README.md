@@ -132,7 +132,7 @@ updateSDKUserEmail (email,callback);
 
 ## <a id="tracking-new-registrastions"></a>  Tracking New Registrations
 
-In all situations where a single user action requires you to set both the customer ID and email address (e.g., registration, newsletter signup) simultaneously, you should use the **registration event**.
+Whenever a single user action requires a new registration (e.g., registration, newsletter signup), you should use the **registration event**.
 
 **Example usage 1:**  Registration without callback function:
 
@@ -142,6 +142,7 @@ In all situations where a single user action requires you to set both the custom
 var SDK_ID = 'JohnDoe';
 
 var parameters = {
+      email: 'john@gmail.com',
       first_name: 'John',
       optin: true,
       brand: 'example',
@@ -160,6 +161,7 @@ optimoveSDK.API.reportEvent('registration',parameters,null,SDK_ID)
 var SDK_ID = 'JohnDoe';
 
 var parameters = {
+      email: 'john@gmail.com',
       first_name: 'John',
       optin: true,
       brand: 'example',
@@ -173,6 +175,9 @@ var callback = function() {
 // passing the variables to the SDK function
 optimoveSDK.API.reportEvent('registration',parameters,callback,SDK_ID)
 ```
+**Notes:**
+
+>-   You should include the email parameter if you want to target the user via email.
 
 
 ## <a id="tracking-login-for-existing-users"></a>Tracking login for exsting users
