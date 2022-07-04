@@ -13,11 +13,12 @@
 
 var email = SDK_ID = document.getElementById("email").value;
 
-var params = {
+var parameters = {
     first_name : ""+document.getElementById("first_name").value+"",
     last_name : ""+document.getElementById("last_name").value+"",
     opt_in : document.getElementById("opt_in").checked
 };
 
 //registerUser() function sends both the SDK_ID and one custom event to Optimove
-self.optimoveSDK.API.registerUser(""+SDK_ID+"", ""+email+"", "newsletter_registration",params);
+optimoveSDK.API.reportEvent('registration',parameters,null,SDK_ID);
+
