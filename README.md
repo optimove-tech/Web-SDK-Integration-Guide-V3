@@ -89,10 +89,10 @@ Whenever the website captures a visitor’s email address, such as when a visito
 **Example usage:**  Targeting visitors after submitting a newsletter 
 ```javascript
 var parameters = {
-      ‘email’: 'john@gmail.com',
-      ‘first_name’: 'John',
-      ‘optin’: true,
-      ‘brand’: 'example',
+      email: 'john@gmail.com',
+      first_name: 'John',
+      optin: true,
+      brand: 'example',
 }
 // passing the variables to the SDK function
 optimoveSDK.API.reportEvent(‘newsletter_reg’,parameters)
