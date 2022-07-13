@@ -3,7 +3,7 @@
 	- [Intro](#intro-basic)
 	- [Initialization](#initialization) 
 	- [Tracking page visits](#track-visits)
-	- [Tracking emails for Visitors](#tracking-emails-for-visitors)
+	- [ Targeting visitors by email](#targeting-visitors-by-email)
 	- [Tracking new registrastions](#tracking-new-registrastions)
 	- [Tracking login for exsting users ](#tracking-login-for-existing-users)
 - Advanced setup
@@ -82,51 +82,25 @@ optimoveSDK.API.setPageVisit(PageURL, PageTitle, PageCategory, SDK_ID);
 >
 >- Call this function with the SDK_ID upon every page load/visit when you recognize the logged in user <br />
 
-## <a id="tracking-emails-for-visitors"></a> Tracking emails for Visitors
+## <a id="targeting-visitors-by-email"></a> Targeting visitors by email
 
-Whenever the website captures a visitor’s email address, such as when a visitor submits a register or subscribe form, call the **setUserEmail()** function to record the address. The setUserEmail() function attaches an email address to a visitor or a customer entity in real time. After using this function, a visitor / customer may be targeted by an email execution channel.
+Whenever the website captures a visitor’s email address, such as when a visitor submits a newsletter you can call a custom event that includes the ‘email’ parameter. After using a custom event including email parameter the visitor may be targeted by an email execution channel  
 
+**Example usage:**  Targeting visitors after submitting a newsletter 
 ```javascript
-// email: user’s email address (string, required)
-optimoveSDK.API.setUserEmail(email);
-```
-**Example usage 1:**  setUserEmail() without a callback function
-```javascript
-// general shared function to captures email address from various forms
-function updateSDKUserEmail(email){
-	// Optimove function
-	optimoveSDK.API.setUserEmail(email);
+var parameters = {
+      ‘email’: 'john@gmail.com',
+      ‘first_name’: 'John',
+      ‘optin’: true,
+      ‘brand’: 'example',
 }
-
-// example email variable
-var email = 'joe@gmail.com';
-
-// calling the shared function with the relavant variable
-updateSDKUserEmail (email);
-```
-
- **Example usage 2:**  setUserEmail() with a callback function
-```javascript
-// general shared function to capture an email address from various forms 
-function updateSDKUserEmail(email,callback){ 
-// Optimove function 
-optimoveSDK.API.setUserEmail(email,callback); 
-} 
-
-// example email variable 
-var email = 'joe@gmail.com'; 
-
-//example callback 
-var callback = function() { 
-optimoveSDK.API.reportEvent('opt_in_status_change', {opt_in: true}); 
-}; 
-
-// calling the shared function with the relavant variable 
-updateSDKUserEmail (email,callback);
+// passing the variables to the SDK function
+optimoveSDK.API.reportEvent(‘newsletter_reg’,parameters)
 ```
 
 > **Note:**
 >-   The "email" is a required variable and must be a "string" format.
+>-   Make sure the email is valid 
 
 
 
