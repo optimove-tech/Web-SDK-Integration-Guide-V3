@@ -3,7 +3,7 @@
 	 - [Intro](#basic-setup) 
 	 - [Add Web SDK script to your website / tag manager](#add-code) 
 	- [Tracking page visits](#track-visits)
-	- [Tracking emails for Visitors](#tracking-emails-for-visitors)
+	- [Targeting visitors by email](#Targeting-visitors-by-email)
 	- [Tracking new registrastions](#tracking-new-registrastions)
 	- [Tracking login for exsting users ](#tracking-login-for-existing-users)
 
