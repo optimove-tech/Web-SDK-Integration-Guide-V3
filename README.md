@@ -317,3 +317,49 @@ addToWishList('my wish list 1', 123456, 'product name', 1.99);
 >     
 > -   All monetary values must be reported in the same currency defined in your Optimove instance (e.g., if your instance is based on US dollars, all monetary event values must be reported in dollars). Optimove will not perform currency conversions.
 > -   If your Optimove instance supports multiple languages, all event parameters must use a single default language. This is required in order to maintain a unified set of events.
+
+
+## <a id="web-push-implementation"></a>Web Push Implementation
+
+For implementing our web push channel, please ensure that the Basic Setup steps above have been completed to add the SDK to your site, and tracking of page visits is implemented. Once completed, follow the instructions below to finish the required setup for web push.
+
+To enable support for web push notifications, it is necessary to host a Service Worker file called `worker.js` at the root of your domain.
+
+Use the the following file contents:
+
+```javascript
+importScripts('https://static.app.delivery/sdks/web/optimove-worker.js');
+```
+
+> If you have an existing service worker, you can add this line to your existing implementation.
+
+For example, if your site is `https://example.com`, the file should be accessible from `https://example.com/worker.js`.
+
+Web push notifications also require your site to be served securly over TLS with the `https` scheme.
+
+For more information on our web push channel please contact your CSM.
+
+### <a id="web-push-prompts"></a>Prompt Configuration
+
+In order to send web push notifications, it is necessary to request permission from the user. The Optimove SDK provides a permission prompt system that can be configured in the Mobile Marketing UI.
+
+By default, a notification Bell prompt will be configured to be shown in response to the set page visit event.
+
+To customize the default prompt appearance, or add additional prompts, see the Messaging > Configuration > Web Push section in the Mobile Marketing UI.
+
+> Note that prompt definitions are cached in the browser for an hour, and clearing browser storage may be necessary whilst testing changes to prompts.
+
+### <a id="web-push-testing"></a>Testing
+
+#### Checking Integration
+
+When you open your site in a supported browser, you can check that the SDK has been initialized correctly by selecting the project in your Mobile Marketing UI and clicking the Installs tab to see the fifty most recent installs of the SDK. Click on any install to see more information.
+
+In this view you can also search by customer ID if you have set the customer ID using the SDK.
+
+#### Sending a Test Push
+
+Once you have opened your site, and granted permission for notifications using a prompt, look for your record in the Installs tab of the Mobile Marketing UI. From here, you can send a test push directly to your browser. Click on an install record to expand it, select the 'Push' tab, and click Send Test Push.
+
+If you do not receive the push notification, you can check the Error Log for any errors sending the push notification by accessing Messaging, Configuration, then selecting the Error Log tab.
+
