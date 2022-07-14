@@ -2,13 +2,10 @@
  - **Basic Setup**
 	 - [Intro](#basic-setup) 
 	 - [Add Web SDK script to your website / tag manager](#add-code) 
-	- **Implementation for Visitors (unidentified users)**
-		 - [Tracking Page Visits for Visitors](#track-visits-visitors) 
-		 - [Reporting/Updating User Email Addresses](#record-email) 
-	- **Implementation for Customers (identified users)**
-	  	- [Stitching Website Visitors to Registered Customer IDs ](#link-visit-customer) 
-	  	- [Registering the User ID and User Email at the Same Time](#record-user-email) 
-		- [Tracking Page Visits for Customers](#track-visits-customers) 
+	- [Tracking page visits](#track-visits)
+	- [Tracking emails for Visitors](#tracking-emails-for-visitors)
+	- [Tracking new registrastions](#tracking-new-registrastions)
+	- [Tracking login for exsting users ](#tracking-login-for-existing-users)
 
   - **Advanced Setup**
 	 - [Intro](#advanced-setup)
