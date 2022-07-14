@@ -1,14 +1,25 @@
 # Web SDK Setup Guide
-- Basic setup
-	- [Intro](#intro-basic)
-	- [Initialization](#initialization) 
-	- [Tracking page visits](#track-visits)
-	- [ Targeting visitors by email](#targeting-visitors-by-email)
-	- [Tracking new registrastions](#tracking-new-registrastions)
-	- [Tracking login for exsting users ](#tracking-login-for-existing-users)
-- Advanced setup
-	- [Intro](#intro-advanced)
-	- [Reporting Custom Events](#reporting-custom-events)
+ - **Basic Setup**
+	 - [Intro](#basic-setup) 
+	 - [Add Web SDK script to your website / tag manager](#add-code) 
+	- **Implementation for Visitors (unidentified users)**
+		 - [Tracking Page Visits for Visitors](#track-visits-visitors) 
+		 - [Reporting/Updating User Email Addresses](#record-email) 
+	- **Implementation for Customers (identified users)**
+	  	- [Stitching Website Visitors to Registered Customer IDs ](#link-visit-customer) 
+	  	- [Registering the User ID and User Email at the Same Time](#record-user-email) 
+		- [Tracking Page Visits for Customers](#track-visits-customers) 
+
+  - **Advanced Setup**
+	 - [Intro](#advanced-setup)
+ 	- [Reporting Custom Events](#custom-events) 
+ 
+  - **Web Push Implementation**
+	- [Service Worker](#web-push-implementation)
+	- [Prompt Configuration](#web-push-prompts)
+	- [Testing](#web-push-testing)
+
+----------
 
 ### <a id="intro-basic"></a> Intro 
 Use the basic setup of the Web SDK in order to:
