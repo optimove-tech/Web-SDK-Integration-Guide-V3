@@ -1,6 +1,6 @@
 # Web SDK Setup Guide
  - **Basic Setup**
-	 - [Intro](#intro-basic) 
+	 - [Intro](#basic-setup) 
 	 - [Add Web SDK initialization script to your website](#initialization) 
 	- [Tracking page visits](#track-visits)
 	- [Targeting visitors by email](#targeting-visitors-by-email)
@@ -19,7 +19,7 @@
 
 ----------
 
-### <a id="intro-basic"></a> Intro 
+## <a id="basic-setup"></a>Basic Setup
 Use the basic setup of the Web SDK in order to:
 
 -   Implement  [Track & Trigger](https://docs.optimove.com/track-and-trigger/)
@@ -216,7 +216,7 @@ optimoveSDK.API.reportEvent('login',parameters,callback,SDK_ID)
 
 #  <a id=advanced-setup></a>Advanced Setup
 ### <a id="intro-advanced"></a> Intro  
-The  **Advanced Setup**  includes everything in the  [Basic Setup](#intro-basic)  as well as reporting custom events.
+The  **Advanced Setup**  includes everything in the  [Basic Setup](#basic-setup)  as well as reporting custom events.
 
 Following your Basic Setup SDK deployment, Optimove's Product Integration Manager will setup a call to help you create and implement the custom events.
 
@@ -321,7 +321,7 @@ addToWishList('my wish list 1', 123456, 'product name', 1.99);
 ## <a id="web-push-implementation"></a>Web Push Implementation
 
 ### <a id="web-push-prerequisites"></a>Pre-requisites
-For implementing our web push channel, please ensure that the [Basic Setup](#intro-basic) steps above have been completed to add the SDK to your site, and tracking of page visits is implemented. Once completed, follow the instructions below to finish the required setup for web push.
+For implementing our web push channel, please ensure that the [Basic Setup](#basic-setup) steps above have been completed to add the SDK to your site, and tracking of page visits is implemented. Once completed, follow the instructions below to finish the required setup for web push.
 
 ### <a id="service-worker"></a>Service Worker
 To enable support for web push notifications, it is necessary to host a Service Worker file called `worker.js` at the root of your domain.
