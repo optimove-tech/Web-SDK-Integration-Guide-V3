@@ -1,18 +1,19 @@
 # Web SDK Setup Guide
  - **Basic Setup**
-	 - [Intro](#basic-setup) 
-	 - [Add Web SDK script to your website / tag manager](#add-code) 
+	 - [Intro](#intro-basic) 
+	 - [Add Web SDK initialization script to your website](#initialization) 
 	- [Tracking page visits](#track-visits)
-	- [Targeting visitors by email](#Targeting-visitors-by-email)
-	- [Tracking new registrastions](#tracking-new-registrastions)
-	- [Tracking login for exsting users ](#tracking-login-for-existing-users)
+	- [Targeting visitors by email](#targeting-visitors-by-email)
+	- [Tracking new registrations](#tracking-new-registrations)
+	- [Tracking login for existing users ](#tracking-login-for-existing-users)
 
   - **Advanced Setup**
 	 - [Intro](#advanced-setup)
- 	- [Reporting Custom Events](#custom-events) 
+ 	- [Reporting Custom Events](#reporting-custom-events) 
  
   - **Web Push Implementation**
-	- [Service Worker](#web-push-implementation)
+	- [Pre-requisites](#web-push-prerequisites)
+	- [Service Worker](#service-worker)
 	- [Prompt Configuration](#web-push-prompts)
 	- [Testing](#web-push-testing)
 
@@ -23,11 +24,12 @@ Use the basic setup of the Web SDK in order to:
 
 -   Implement  [Track & Trigger](https://docs.optimove.com/track-and-trigger/)
 -   Implement  [Google Display Network](https://github.com/optimove-tech/GDN/blob/newImplementation/README.md)  execution channel
+- Implement [Web Push Notifications](#web-push-prerequisites)
 
-### <a id="initialization"></a> Initialization
-### [](https://github.com/optimove-tech/Web-SDK-Integration-Guide-V2#--add-the-optimove-web-sdk-script-to-your-website)Add the Optimove Web SDK script to your website
+### <a id="initialization"></a> Add the Web SDK initialization script to your website
 
-The following code snippet must be added to every page in your website, either by adding it into the relevant site template files/code or using a website tag manager (such as  [Google Tag Manager code snippet](https://github.com/optimove-tech/Web-SDK-Integration-Guide/blob/newImplemetationUpdate/Web-SDK-Basic-Code-Setup/readme.md)) This code will load and initialize the SDK.
+
+The following code snippet must be added to your website on every page load, either by adding it into the relevant site template files/code or using a website tag manager (such as  [Google Tag Manager code snippet](https://github.com/optimove-tech/Web-SDK-Integration-Guide/blob/newImplemetationUpdate/Web-SDK-Basic-Code-Setup/readme.md)) This code will load and initialize the SDK.
 ```javascript
 <script async src="https://sdk.optimove.net/websdk/?tenant_id={your_tenant_id}"></script>
 ```
@@ -92,7 +94,7 @@ optimoveSDK.API.setPageVisit(PageURL, PageTitle, PageCategory, SDK_ID);
 
 ## <a id="targeting-visitors-by-email"></a> Targeting visitors by email
 
-Whenever the website captures a visitor’s email address, such as when a visitor submits a newsletter you can call a custom event that includes the ‘email’ parameter. After using a custom event including email parameter the visitor may be targeted by an email execution channel  
+Whenever the website captures a visitor’s email address, such as when a visitor submits a newsletter, you can call a custom event that includes the ‘email’ parameter. After using a custom event including an email parameter, the visitor may be targeted by an email execution channel  
 
 **Example usage:**  Targeting visitors after submitting a newsletter 
 ```javascript
@@ -112,7 +114,7 @@ optimoveSDK.API.reportEvent(‘newsletter_reg’,parameters)
 
 
 
-## <a id="tracking-new-registrastions"></a>  Tracking New Registrations
+## <a id="tracking-new-registrations"></a>  Tracking New Registrations
 
 Whenever a single user action requires a new registration (e.g., registration, newsletter signup), you should use the **registration event**.
 
@@ -162,8 +164,8 @@ optimoveSDK.API.reportEvent('registration',parameters,callback,SDK_ID)
 >-   You should include the email parameter if you want to target the user via email.
 
 
-## <a id="tracking-login-for-existing-users"></a>Tracking login for exsting users
-In all cases,where you detect a user login call the **login event**
+## <a id="tracking-login-for-existing-users"></a>Tracking login for existing users
+In all cases, where you detect a user login call the **login event**
 
 **Example usage 1:**  login without callback function:
 ```javascript
@@ -213,8 +215,8 @@ optimoveSDK.API.reportEvent('login',parameters,callback,SDK_ID)
 >-   **In order to ensure the correct order of arrival, utilize the Optimove SDK callback functions.**
 
 #  <a id=advanced-setup></a>Advanced Setup
-### <a id="intro-advanced"></a> intro  
-The  **Advanced Setup**  includes everything in the  [Basic Setup](https://github.com/optimove-tech/Web-SDK-Integration-Guide#basic-setup)  as well as reporting custom events.
+### <a id="intro-advanced"></a> Intro  
+The  **Advanced Setup**  includes everything in the  [Basic Setup](#intro-basic)  as well as reporting custom events.
 
 Following your Basic Setup SDK deployment, Optimove's Product Integration Manager will setup a call to help you create and implement the custom events.
 
@@ -318,8 +320,10 @@ addToWishList('my wish list 1', 123456, 'product name', 1.99);
 
 ## <a id="web-push-implementation"></a>Web Push Implementation
 
-For implementing our web push channel, please ensure that the Basic Setup steps above have been completed to add the SDK to your site, and tracking of page visits is implemented. Once completed, follow the instructions below to finish the required setup for web push.
+### <a id="web-push-prerequisites"></a>Pre-requisites
+For implementing our web push channel, please ensure that the [Basic Setup](#intro-basic) steps above have been completed to add the SDK to your site, and tracking of page visits is implemented. Once completed, follow the instructions below to finish the required setup for web push.
 
+### <a id="service-worker"></a>Service Worker
 To enable support for web push notifications, it is necessary to host a Service Worker file called `worker.js` at the root of your domain.
 
 Use the the following file contents:
