@@ -33,8 +33,13 @@ The following code snippet must be added to your website on every page load, eit
 ```javascript
 <script async src="https://sdk.optimove.net/websdk/?tenant_id={your_tenant_id}"></script>
 ```
-> **Note:**  Remember to replace  **your_tenant_id**  ,with the actual details that you receive from Optimove’s Integration Team and to remove the brackets.
-> Example:<script async src="https://sdk.optimove.net/websdk/?tenant_id=XXX"></script>
+> **Note:** 
+>- Remember to replace  **your_tenant_id**  ,with the actual details that you receive from Optimove’s Integration Team.
+>- Remove the brackets.
+
+For example:  
+``` javascript 
+<script async src="https://sdk.optimove.net/websdk/?tenant_id=000"></script>
 ## <a id="track-visits"></a>Tracking Page Visits 
 
 In order to track page visits, call the setPageVisit() function on every page of the website to ensure that accurate user counts and session time metrics are collected.For customers, If a user is identified you can add the SDK_ID to the setPageVisit() function, see examples below
