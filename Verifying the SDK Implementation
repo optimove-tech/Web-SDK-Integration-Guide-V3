@@ -1,12 +1,12 @@
 
-# Verifying the SDK Implementation
+#Verifying the SDK Implementation
 This document provides instructions on how to test and confirm your  [SDK implementation](https://github.com/optimove-tech/Web-SDK-Integration-Guide-V3). Please make sure all the steps below have been followed.
 
 If a test fails to show the expected results, please contact your Customer Success Manager.
 
 >Please make sure to use incognito mode and clear cache and website data before getting started.
 
-## Step One: Verify SDK Initialization
+##Step One: Verify SDK Initialization
 
 **SDK files**
 To perform the test, visit or reload a page on your website where the SDK has been implemented on.
