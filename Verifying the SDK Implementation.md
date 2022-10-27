@@ -72,6 +72,7 @@ Then, go to Dev tools > Network > filter to Optimove.
 <img src = https://github.com/optimove-tech/Web-SDK-Integration-Guide-V3/blob/Efrat_branch_2/images/registration%20realtime.png>
 
 **"pageVisit" event - existing customers**
+<br>
 To perform the test, navigate between different pages.
 Then, go to Dev tools > Network > filter to Optimov
 
@@ -87,15 +88,13 @@ Then, go to Dev tools > Network > filter to Optimov
 <br>
 
 **login event**
-
 <br>
 To perform the test, login to your website.
 Then, go to Dev tools > Network > filter to Optimove.
 
-<br>
+
 
 ***Expected test results:***
-
 <br>
 
 1. login is reported to realtime after login
