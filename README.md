@@ -29,7 +29,7 @@ Use the basic setup of the Web SDK in order to:
 ### <a id="initialization"></a> Add the Web SDK initialization script to your website
 
 
-The following code snippet must be added to your website on every page load, either by adding it into the relevant site template files/code or using a website tag manager (such as  [Google Tag Manager code snippet](https://github.com/optimove-tech/Web-SDK-Integration-Guide/blob/newImplemetationUpdate/Web-SDK-Basic-Code-Setup/readme.md)) This code will load and initialize the SDK.
+The following code snippet must be added to your website on every page load, either by adding it into the relevant site template files/code or using a website tag manager (such as  [Google Tag Manager code snippet](https://github.com/optimove-tech/Web-SDK-Integration-Guide-V3/tree/main/Web-SDK-Basic-Code-Setup)) This code will load and initialize the SDK.
 ```javascript
 <script async src="https://sdk.optimove.net/websdk/?tenant_id=your_tenant_id"></script>
 ```
