@@ -31,14 +31,14 @@ Use the basic setup of the Web SDK in order to:
 
 The following code snippet must be added to your website on every page load, either by adding it into the relevant site template files/code or using a website tag manager (such as  [Google Tag Manager code snippet](https://github.com/optimove-tech/Web-SDK-Integration-Guide-V3/tree/main/Web-SDK-Basic-Code-Setup)) This code will load and initialize the SDK.
 ```javascript
-<script async src="https://sdk.optimove.net/websdk/?tenant_id=your_tenant_id"></script>
+<script async src="https://sdk.optimove.net/websdk/?tenant_id=<YOUR_TENANT_ID>&tenant_token=<YOUR_TENANT_TOKEN>"</script>
 ```
 > **Note:** 
->- Remember to replace  **your_tenant_id**  ,with the actual details that you receive from Optimove’s Integration Team.
+>- Remember to replace  **<YOUR_TENANT_ID>** and **<YOUR_TENANT_TOKEN>** ,with the actual details that you receive from Optimove’s Integration Team.
 
 For example:  
 ``` javascript 
-<script async src="https://sdk.optimove.net/websdk/?tenant_id=000"></script>
+<script async src="https://sdk.optimove.net/websdk/?tenant_id=000&tenant_token=99999wwwwwwwAAAAABBB"></script>
 ```
 ## <a id="track-visits"></a>Tracking Page Visits 
 
