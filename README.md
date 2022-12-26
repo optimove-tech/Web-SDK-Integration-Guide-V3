@@ -34,7 +34,7 @@ The following code snippet must be added to your website on every page load, eit
 <script async src="https://sdk.optimove.net/websdk/?tenant_id=<YOUR_TENANT_ID>&tenant_token=<YOUR_TENANT_TOKEN>"</script>
 ```
 > **Note:** 
->- Remember to replace  **<YOUR_TENANT_ID>* and **<YOUR_TENANT_TOKEN>** ,with the actual details that you receive from Optimove’s Integration Team.
+>- Remember to replace  **<YOUR_TENANT_ID>** and **<YOUR_TENANT_TOKEN>** ,with the actual details that you receive from Optimove’s Integration Team.
 
 For example:  
 ``` javascript 
