@@ -30,14 +30,14 @@ Use the basic setup of the Web SDK in order to:
 
 
 The following code snippet must be added to your website on every page load, either by adding it into the relevant site template files/code or using a website tag manager (such as  [Google Tag Manager code snippet](https://github.com/optimove-tech/Web-SDK-Integration-Guide-V3/tree/main/Web-SDK-Basic-Code-Setup)) This code will load and initialize the SDK.
-```javascript
+```html
 <script async src="https://sdk.optimove.net/websdk/?tenant_id=<YOUR_TENANT_ID>&tenant_token=<YOUR_TENANT_TOKEN>"</script>
 ```
 > **Note:** 
 >- Remember to replace  **<YOUR_TENANT_ID>** and **<YOUR_TENANT_TOKEN>** ,with the actual details that you receive from Optimove’s Integration Team.
 
 For example:  
-``` javascript 
+```html
 <script async src="https://sdk.optimove.net/websdk/?tenant_id=000&tenant_token=99999wwwwwwwAAAAABBB"></script>
 ```
 ## <a id="track-visits"></a>Tracking Page Visits 
@@ -338,11 +338,11 @@ importScripts('https://static.app.delivery/sdks/web/optimove-worker.js');
 > If you have an existing service worker, you can add this line to your existing implementation.
 
 
-Your Service Worker could be named `worker.js` and located at the root of your domain, for example, if your site is `https://example.com`, the file should be accessible from `https://example.com/worker.js`.
+By default, the SDK will look for a service worker called `worker.js`, hosted at the root of your domain. For example, if your site is `https://example.com`, the SDK will search in the following path: `https://example.com/worker.js`.
 
 You can customize the location path and the name of the service worker by passing an attribute to the Optimove script tag - `data-optimove-service-worker-path` , for example:
 
-``` javascript 
+```html
 <script async src="https://sdk.optimove.net/websdk/?tenant_id=000" data-optimove-service-worker-path="/custom/path/to/yourWorker.js"></script>
 ``` 
 
