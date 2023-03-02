@@ -30,14 +30,14 @@ Use the basic setup of the Web SDK in order to:
 
 
 The following code snippet must be added to your website on every page load, either by adding it into the relevant site template files/code or using a website tag manager (such as  [Google Tag Manager code snippet](https://github.com/optimove-tech/Web-SDK-Integration-Guide-V3/tree/main/Web-SDK-Basic-Code-Setup)) This code will load and initialize the SDK.
-```javascript
+```html
 <script async src="https://sdk.optimove.net/websdk/?tenant_id=<YOUR_TENANT_ID>&tenant_token=<YOUR_TENANT_TOKEN>"</script>
 ```
 > **Note:** 
 >- Remember to replace  **<YOUR_TENANT_ID>** and **<YOUR_TENANT_TOKEN>** ,with the actual details that you receive from Optimove’s Integration Team.
 
 For example:  
-``` javascript 
+```html
 <script async src="https://sdk.optimove.net/websdk/?tenant_id=000&tenant_token=99999wwwwwwwAAAAABBB"></script>
 ```
 ## <a id="track-visits"></a>Tracking Page Visits 
@@ -330,17 +330,21 @@ addToWishList('my wish list 1', 123456, 'product name', 1.99);
 For implementing our web push channel, please ensure that the [Basic Setup](#basic-setup) steps above have been completed to add the SDK to your site, and tracking of page visits is implemented. Once completed, follow the instructions below to finish the required setup for web push.
 
 ### <a id="service-worker"></a>Service Worker
-To enable support for web push notifications, it is necessary to host a Service Worker file called `worker.js` at the root of your domain.
-
-Use the the following file contents:
+To enable support for web push notifications, it is necessary to host a Service Worker file with the following content:
 
 ```javascript
 importScripts('https://static.app.delivery/sdks/web/optimove-worker.js');
 ```
-
 > If you have an existing service worker, you can add this line to your existing implementation.
 
-For example, if your site is `https://example.com`, the file should be accessible from `https://example.com/worker.js`.
+
+By default, the SDK will look for a service worker called `worker.js`, hosted at the root of your domain. For example, if your site is `https://example.com`, the SDK will search in the following path: `https://example.com/worker.js`.
+
+You can customize the location path and the name of the service worker by passing an attribute to the Optimove script tag - `data-optimove-service-worker-path` , for example:
+
+```html
+<script async src="https://sdk.optimove.net/websdk/?tenant_id=000" data-optimove-service-worker-path="/custom/path/to/yourWorker.js"></script>
+``` 
 
 Web push notifications also require your site to be served securly over TLS with the `https` scheme.
 
