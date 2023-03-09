@@ -343,7 +343,7 @@ By default, the SDK will look for a service worker called `worker.js`, hosted at
 You can customize the location path and the name of the service worker by passing an attribute to the Optimove script tag - `data-optimove-service-worker-path` , for example:
 
 ```html
-<script async src="https://sdk.optimove.net/websdk/?tenant_id=000" data-optimove-service-worker-path="/custom/path/to/yourWorker.js"></script>
+<script async src="https://sdk.optimove.net/websdk/?tenant_id=000&tenant_token=99999wwwwwwwAAAAABBB" data-optimove-service-worker-path="/custom/path/to/yourWorker.js"></script>
 ``` 
 
 Web push notifications also require your site to be served securly over TLS with the `https` scheme.
