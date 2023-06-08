@@ -17,6 +17,8 @@
 	- [Prompt Configuration](#web-push-prompts)
 	- [Testing](#web-push-testing)
 
+  - **Web Push on iOS**
+    - [Requirements](#iOS-web-push-gotchas)
 ----------
 
 ## <a id="basic-setup"></a>Basic Setup
@@ -374,3 +376,8 @@ Once you have opened your site, and granted permission for notifications using a
 
 If you do not receive the push notification, you can check the Error Log for any errors sending the push notification by accessing Messaging, Configuration, then selecting the Error Log tab.
 
+### <a id="iOS-web-push-gotchas"></a>Requirements
+As of Safari 16.4, Safari for iOS supports subscribing to push notifications. In order for these to work, a number of prerequisites must be met:
+  - The application implementing the Optimove SDK must also serve a manifest.json file, specifying the display mode as "standalone". More info on this can be found here: https://developer.mozilla.org/en-US/docs/Web/Manifest
+  - Users wishing to receive web push notifications must add the website to their home screen. Only when opened from the home screen can they subscribe to web notifications
+  - Currently, some devices with a compatible iOS version don't have the Push API and Notifications API enabled in Safari settings. Users which don't have these enabled in their experimental features will not be able to subscribe to push notifications until they do so.
