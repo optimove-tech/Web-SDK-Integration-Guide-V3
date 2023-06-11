@@ -238,7 +238,7 @@ optimoveSDK.API.reportEvent(<event_name>, <parameter JS object>);
 ```
 In case a user is identified you can add the SDK_ID to the reportEvent() function in this format:
 ```javascript
-optimoveSDK.API.reportEvent(<event_name>, <parameter JS object>,SDK_ID);
+optimoveSDK.API.reportEvent(<event_name>, <parameter JS object>,null,SDK_ID);
 ```
 
 **Example usage 1:**  reportEvent() without callback function for unidentified users 
