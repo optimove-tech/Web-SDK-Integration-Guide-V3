@@ -13,6 +13,7 @@
  
   - **Web Push Implementation**
 	- [Pre-requisites](#web-push-prerequisites)
+	- [Generating a Safari push certificate](#safari-push-certificate)
 	- [Service Worker](#service-worker)
 	- [Prompt Configuration](#web-push-prompts)
 	- [Testing](#web-push-testing)
