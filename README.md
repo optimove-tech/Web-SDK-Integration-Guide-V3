@@ -339,7 +339,7 @@ To support sending notifications to desktop Safari, configuration of the followi
 -	Icon (square, >=512px)
 -	APNS certificate
 To generate an APNS certificate, you need access to an Apple Developer account.
-GENERATING A SAFARI PUSH CERTIFICATE¶
+GENERATING A SAFARI PUSH CERTIFICATE
 In the Apple Developer console, [add a new identifier for your website](https://developer.apple.com/account/resources/identifiers/add/websitePushId).
 
 <img src="https://github.com/optimove-tech/Web-SDK-Integration-Guide-V3/blob/185182-safari-certificate-docs/images/safari-push/safari-cert-1.png">
