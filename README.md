@@ -341,35 +341,35 @@ To generate an APNS certificate, you need access to an Apple Developer account.
 GENERATING A SAFARI PUSH CERTIFICATE¶
 In the Apple Developer console, [add a new identifier for your website](https://developer.apple.com/account/resources/identifiers/add/websitePushId).
 
-<img src="https://github.com/optimove-tech/Web-SDK-Integration-Guide-V2/blob/185182-add-safari-p12-cert-docs/images/safari-push/safari-cert-1.png">
+<img src="https://github.com/optimove-tech/Web-SDK-Integration-Guide-V3/blob/185182-safari-certificate-docs/images/safari-push/safari-cert-1.png">
  
 Next, navigate to the [certificates list](https://developer.apple.com/account/resources/certificates/list). From here, add a new certificate.
 For the type of certificate, choose Services > Website Push ID Certificate:
  
- <img src="https://github.com/optimove-tech/Web-SDK-Integration-Guide-V2/blob/185182-add-safari-p12-cert-docs/images/safari-push/safari-cert-2.png">
+ <img src="https://github.com/optimove-tech/Web-SDK-Integration-Guide-V3/blob/185182-safari-certificate-docs/images/safari-push/safari-cert-2.png">
 
 Generate a Certificate Signing Request (CSR) using the Keychain Access app:
  
- <img src="https://github.com/optimove-tech/Web-SDK-Integration-Guide-V2/blob/185182-add-safari-p12-cert-docs/images/safari-push/safari-cert-3.png">
+ <img src="https://github.com/optimove-tech/Web-SDK-Integration-Guide-V3/blob/185182-safari-certificate-docs/images/safari-push/safari-cert-3.png">
 
- <img src="https://github.com/optimove-tech/Web-SDK-Integration-Guide-V2/blob/185182-add-safari-p12-cert-docs/images/safari-push/safari-cert-4.png">
+ <img src="https://github.com/optimove-tech/Web-SDK-Integration-Guide-V3/blob/185182-safari-certificate-docs/images/safari-push/safari-cert-4.png">
  
 Upload the generated CSR into the developer console:
  
-  <img src="https://github.com/optimove-tech/Web-SDK-Integration-Guide-V2/blob/185182-add-safari-p12-cert-docs/images/safari-push/safari-cert-5.png">
+  <img src="https://github.com/optimove-tech/Web-SDK-Integration-Guide-V3/blob/185182-safari-certificate-docs/images/safari-push/safari-cert-5.png">
 
 Download the issued certificate:
  
-  <img src="https://github.com/optimove-tech/Web-SDK-Integration-Guide-V2/blob/185182-add-safari-p12-cert-docs/images/safari-push/safari-cert-6.png">
+  <img src="https://github.com/optimove-tech/Web-SDK-Integration-Guide-V3/blob/185182-safari-certificate-docs/images/safari-push/safari-cert-6.png">
 
 Once downloaded, open the certificate file to add it to your keychain.
 Now export the certificate & private key from the Keychain access tool as a P12 file:
 
- <img src="https://github.com/optimove-tech/Web-SDK-Integration-Guide-V2/blob/185182-add-safari-p12-cert-docs/images/safari-push/safari-cert-7.png">
+ <img src="https://github.com/optimove-tech/Web-SDK-Integration-Guide-V3/blob/185182-safari-certificate-docs/images/safari-push/safari-cert-7.png">
  
 Finally, upload the certificate into the Web push config settings, and fill in the p12 password field:  
 
- <img src="https://github.com/optimove-tech/Web-SDK-Integration-Guide-V2/blob/185182-add-safari-p12-cert-docs/images/safari-push/safari-cert-8.png">
+ <img src="https://github.com/optimove-tech/Web-SDK-Integration-Guide-V3/blob/185182-safari-certificate-docs/images/safari-push/safari-cert-8.png">
 
 
 ### <a id="service-worker"></a>Service Worker
