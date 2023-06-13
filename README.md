@@ -19,7 +19,7 @@
 	- [Testing](#web-push-testing)
 
   - **Web Push on iOS**
-    - [Requirements](#iOS-web-push-gotchas)
+    - [Requirements](#ios-web-push-gotchas)
 ----------
 
 ## <a id="basic-setup"></a>Basic Setup
@@ -339,7 +339,6 @@ To support sending notifications to desktop Safari, configuration of the followi
 -	Icon (square, >=512px)
 -	APNS certificate
 To generate an APNS certificate, you need access to an Apple Developer account.
-GENERATING A SAFARI PUSH CERTIFICATE
 In the Apple Developer console, [add a new identifier for your website](https://developer.apple.com/account/resources/identifiers/add/websitePushId).
 
 <img src="https://github.com/optimove-tech/Web-SDK-Integration-Guide-V3/blob/185182-safari-certificate-docs/images/safari-push/safari-cert-1.png">
@@ -418,7 +417,7 @@ Once you have opened your site, and granted permission for notifications using a
 
 If you do not receive the push notification, you can check the Error Log for any errors sending the push notification by accessing Messaging, Configuration, then selecting the Error Log tab.
 
-### <a id="iOS-web-push-gotchas"></a>Requirements
+### <a id="ios-web-push-gotchas"></a>Requirements
 As of Safari 16.4, Safari for iOS supports subscribing to push notifications. In order for these to work, a number of prerequisites must be met:
   - The application implementing the Optimove SDK must also serve a manifest.json file, specifying the display mode as "standalone". More info on this can be found here: https://developer.mozilla.org/en-US/docs/Web/Manifest
   - Users wishing to receive web push notifications must add the website to their home screen. Only when opened from the home screen can they subscribe to web notifications
