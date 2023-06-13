@@ -335,9 +335,9 @@ For implementing our web push channel, please ensure that the [Basic Setup](#bas
 ### <a id="safari-push-certificate"></a>Generating a Safari push certificate
 
 To support sending notifications to desktop Safari, configuration of the following items is necessary:
-•	Site URL
-•	Icon (square, >=512px)
-•	APNS certificate
+-	Site URL
+-	Icon (square, >=512px)
+-	APNS certificate
 To generate an APNS certificate, you need access to an Apple Developer account.
 GENERATING A SAFARI PUSH CERTIFICATE¶
 In the Apple Developer console, [add a new identifier for your website](https://developer.apple.com/account/resources/identifiers/add/websitePushId).
