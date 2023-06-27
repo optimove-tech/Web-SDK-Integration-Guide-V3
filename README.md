@@ -315,7 +315,7 @@ optimoveSDK.API.reportEvent ('add_to_wishlist', params, callback,SDK_ID);
 addToWishList('my wish list 1', 123456, 'product name', 1.99);
 ```
 > **Note:**
-> >-   Event names and parameters must first be configured within the Optimove instance using the  [Events Configuration Screen](https://academy.optimove.com/en/article/configuring-events-in-optimove)
+> >-   Event names and parameters must first be configured within the Optimove instance using the  [Events Configuration Screen](https://academy.optimove.com/hc/en-us/articles/8738483087517-Configuring-Events-in-Optimove)
 > -   Event and parameter names are case sensitive.
 > -   Events and parameters use lowercase and snake_case as a naming convention. Separate each word with one underscore character (_) and no spaces. (e.g., checkout_completed)
 > -   The parameter types available for use in event-reporting functions are:  
