@@ -25,7 +25,7 @@
 ## <a id="basic-setup"></a>Basic Setup
 Use the basic setup of the Web SDK in order to:
 
--   Implement  [Track & Trigger](https://docs.optimove.com/track-and-trigger/)
+-   Implement  [Track & Trigger](https://academy.optimove.com/hc/en-us/categories/8357811674397-Track-and-Trigger))
 -   Implement  [Google Display Network](https://github.com/optimove-tech/GDN/blob/newImplementation/README.md)  execution channel
 - Implement [Web Push Notifications](#web-push-prerequisites)
 
