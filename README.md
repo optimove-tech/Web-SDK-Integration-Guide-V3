@@ -18,8 +18,14 @@
 	- [Prompt Configuration](#web-push-prompts)
 	- [Testing](#web-push-testing)
 
+	> **NOTE**:
+To unlock these capabilities, you will need to have added the relevant OptiMobile channels to your Optimove package. If you can’t see this feature in your Optimove instance, contact your CSM to find out more.
+
   - **Web Push on iOS**
     - [Requirements](#ios-web-push-gotchas)
+
+	> **NOTE**:
+To unlock these capabilities, you will need to have added the relevant OptiMobile channels to your Optimove package. If you can’t see this feature in your Optimove instance, contact your CSM to find out more.
 ----------
 
 ## <a id="basic-setup"></a>Basic Setup
