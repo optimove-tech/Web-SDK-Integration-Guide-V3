@@ -395,11 +395,11 @@ For more information on our web push channel please contact your CSM.
 
 ### <a id="web-push-prompts"></a>Prompt Configuration
 
-In order to send web push notifications, it is necessary to request permission from the user. The Optimove SDK provides a permission prompt system that can be configured in the Mobile Marketing UI.
+In order to send web push notifications, it is necessary to request permission from the user. The Optimove SDK provides a permission prompt system that can be configured in the Settings section of Optimove UI.
 
 By default, a notification Bell prompt will be configured to be shown in response to the set page visit event.
 
-To customize the default prompt appearance, or add additional prompts, see the Messaging > Configuration > Web Push section in the Mobile Marketing UI.
+To customize the default prompt appearance, or add additional prompts, see the Messaging > Configuration > Web Push section in the Settings section of Optimove UI.
 
 > Note that prompt definitions are cached in the browser for an hour, and clearing browser storage may be necessary whilst testing changes to prompts.
 
@@ -407,13 +407,13 @@ To customize the default prompt appearance, or add additional prompts, see the M
 
 #### Checking Integration
 
-When you open your site in a supported browser, you can check that the SDK has been initialized correctly by selecting the project in your Mobile Marketing UI and clicking the Installs tab to see the fifty most recent installs of the SDK. Click on any install to see more information.
+When you open your site in a supported browser, you can check that the SDK has been initialized correctly by selecting the project in the Settings section of Optimove UI and clicking the Installs tab to see the fifty most recent installs of the SDK. Click on any install to see more information.
 
 In this view you can also search by customer ID if you have set the customer ID using the SDK.
 
 #### Sending a Test Push
 
-Once you have opened your site, and granted permission for notifications using a prompt, look for your record in the Installs tab of the Mobile Marketing UI. From here, you can send a test push directly to your browser. Click on an install record to expand it, select the 'Push' tab, and click Send Test Push.
+Once you have opened your site, and granted permission for notifications using a prompt, look for your record in the Installs tab of the Settings section of Optimove UI. From here, you can send a test push directly to your browser. Click on an install record to expand it, select the 'Push' tab, and click Send Test Push.
 
 If you do not receive the push notification, you can check the Error Log for any errors sending the push notification by accessing Messaging, Configuration, then selecting the Error Log tab.
 
