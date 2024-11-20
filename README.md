@@ -41,7 +41,7 @@ The following code snippet must be added to your website on every page load, eit
 
 For example:  
 ```html
-<script async src="https://sdk.optimove.net/websdk/?tenant_id=000&tenant_token=99999wwwwwwwAAAAABBB"></script>
+<script async src="https://sdk.optimove.net/v2/websdk/?tenant_id=000&tenant_token=99999wwwwwwwAAAAABBB"></script>
 ```
 ## <a id="track-visits"></a>Tracking Page Visits 
 
